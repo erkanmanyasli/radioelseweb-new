@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Else</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+</head>
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(255, 255, 255);
+        height: 100vh;
+        align-items: center;
+
+    }
+
+    .ustlogo {
+        padding: 100px;
+    }
+
+    .artwork img {
+        border-radius: 20px;
+    }
+
+    .texts {
+        font-family: "Jost", sans-serif;
+        text-align: center;
+        margin: 50px;
+        font-size: 25px;
+    }
+
+    .artistname {
+        font-weight: bold;
+    }
+
+    .songname {
+        font-weight: lighter;
+        font-style: italic;
+    }
+
+    .banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        background-color: black;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .banner img {
+        opacity: 0.2;
+    }
+
+    /* Toogle CSS start */
+
+    input[type=checkbox] {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+    }
+
+    label {
+        cursor: pointer;
+        text-indent: -9999px;
+        width: 60px;
+        /* biraz daha küçük switch */
+        height: 30px;
+        background: rgb(219, 219, 219);
+        display: inline-block;
+        border-radius: 30px;
+        position: relative;
+        margin-top: 5px;
+        /* songname ile arada biraz boşluk */
+    }
+
+    label:after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 24px;
+        height: 24px;
+        background: #fff;
+        border-radius: 24px;
+        transition: 0.3s;
+    }
+
+    input:checked+label {
+        background: #000000;
+    }
+
+    input:checked+label:after {
+        left: calc(100% - 3px);
+        transform: translateX(-100%);
+    }
+
+    label:active:after {
+        width: 28px;
+    }
+
+    /* Toogle CSS end */
+
+    @media (max-width: 399px) {
+
+        .artwork img{
+            width: 300px;
+            height: auto;
+        }
+
+    }
+</style>
+
+<body>
+    <div class="container">
+
+        <div class="ustlogo"><img src="./images/Else Logo_Black_PNG.png" alt="radioelselogo" height="60"></div>
+        <div class="artwork"><img src="./images/Artwork.jpg" alt=""></div>
+        <div class="texts">
+            <div class="artistname">Agustin Pietrocola</div>
+            <div class="songname">Sorcerer</div>
+        </div>
+        <div class="switch">
+            <input type="checkbox" id="switch" />
+            <label for="switch">Toggle</label>
+        </div>
+
+    </div>
+
+    <div class="banner"><img src="./images/Else Logo_Sadece ELSE_White_PNG.png" height=30 alt="elselogowhite"></div>
+
+</body>
+
+</html>
